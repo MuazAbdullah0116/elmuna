@@ -1,0 +1,166 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 142 30% 96%;
+    --foreground: 168 42% 13%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 168 42% 13%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 168 42% 13%;
+
+    --primary: 162 70% 35%;
+    --primary-foreground: 60 30% 95%;
+
+    --secondary: 90 27% 56%;
+    --secondary-foreground: 168 42% 13%;
+
+    --muted: 92 13% 80%;
+    --muted-foreground: 168 42% 18%;
+
+    --accent: 43 32% 67%;
+    --accent-foreground: 168 42% 13%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 142 10% 86%;
+    --input: 142 10% 86%;
+    --ring: 168 45% 35%;
+
+    --radius: 0.6rem;
+
+    --sidebar-background: 142 32% 30%;
+
+    --sidebar-foreground: 60 30% 95%;
+
+    --sidebar-primary: 56 55% 52%;
+
+    --sidebar-primary-foreground: 168 42% 13%;
+
+    --sidebar-accent: 162 70% 20%;
+
+    --sidebar-accent-foreground: 60 30% 95%;
+
+    --sidebar-border: 162 49% 25%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 168 46% 14%;
+    --foreground: 142 30% 96%;
+
+    --card: 168 40% 18%;
+    --card-foreground: 142 30% 96%;
+
+    --popover: 168 40% 18%;
+    --popover-foreground: 142 30% 96%;
+
+    --primary: 162 70% 35%;
+    --primary-foreground: 142 30% 96%;
+
+    --secondary: 90 27% 46%;
+    --secondary-foreground: 142 30% 96%;
+
+    --muted: 167 30% 25%;
+    --muted-foreground: 142 20% 85%;
+
+    --accent: 43 32% 47%;
+    --accent-foreground: 142 30% 96%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 142 30% 96%;
+
+    --border: 168 30% 26%;
+    --input: 168 30% 26%;
+    --ring: 162 70% 35%;
+    
+    --sidebar-background: 168 46% 14%;
+    --sidebar-foreground: 142 30% 96%;
+    --sidebar-primary: 56 55% 52%;
+    --sidebar-primary-foreground: 168 42% 13%;
+    --sidebar-accent: 162 70% 35%;
+    --sidebar-accent-foreground: 142 30% 96%;
+    --sidebar-border: 167 30% 25%;
+    --sidebar-ring: 162 70% 35%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground bg-islamic-pattern;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold;
+  }
+  
+  h1 {
+    @apply text-2xl lg:text-3xl;
+  }
+  
+  h2 {
+    @apply text-xl lg:text-2xl;
+  }
+  
+  h3 {
+    @apply text-lg lg:text-xl;
+  }
+}
+
+@layer utilities {
+  .islamic-card {
+    @apply bg-gradient-to-b from-card to-card/90 shadow-md border border-border/50 backdrop-blur-sm;
+  }
+  
+  .islamic-bubble {
+    @apply rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-lg transition-all hover:shadow-xl hover:scale-105;
+  }
+  
+  .islamic-pattern-border {
+    @apply border border-islamic-primary/30 bg-gradient-to-br from-white/80 to-white/70 dark:from-card dark:to-card/90;
+  }
+
+  .font-arabic {
+    font-family: 'Scheherazade New', 'Amiri', serif;
+    line-height: 1.8;
+  }
+}
+
+/* Import Arabic fonts */
+@import url('https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&family=Amiri:wght@400;700&display=swap');
+
+/* Responsive text size adjustments */
+@media (max-width: 640px) {
+  .text-responsive {
+    font-size: 90%;
+  }
+  
+  .font-arabic {
+    font-size: 120%;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-responsive {
+    font-size: 85%;
+  }
+}
+
+/* Additional utility classes for small screens */
+.xs\:flex-row {
+  @media (min-width: 480px) {
+    flex-direction: row;
+  }
+}
